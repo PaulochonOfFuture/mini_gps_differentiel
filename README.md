@@ -16,13 +16,9 @@ Un ESP8266 joue deux rôles simultanément :
   - Il lit les coordonnées corrigées renvoyées par le LC29HEA et les affiche sur une page web locale
 
 Schéma de la situation : 
-Internet (Centipède)
-    ↓ corrections RTCM (fomat binaire des corrections)
-  ESP8266
-    ↕ UART (type de connexion RX/TX)
-  LC29HEA ← antenne SMA
-    → coordonnées corrigées
-    → page web sur 192.168.4.1
+Internet (Centipède) -> corrections RTCM (fomat binaire des corrections) -> ESP8266 <-> UART (type de connexion RX/TX) <-> LC29HEA <- antenne SMA
+  -> coordonnées corrigées
+  -> page web sur 192.168.4.1
 Résultat : une précision de 1 à 2 cm en mode RTK FIX, contre 3 à 10 m sans correction.
 
 Matériel :
