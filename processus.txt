@@ -1,0 +1,35 @@
+Ce que j'ai fais :
+1. créer un "hotspot 4g/5g" avec mon tel (noter login + mdp)
+	login : Paul	mdp : wifi2paul
+
+2. récupérer le l'antenne Centiped la plus proche
+	- "HBC77" (celle que j'ai utilisé)
+
+3. flasher code_gps_differentiel.ino
+
+4. allumer l'hotspot du smartphone
+	- l'ESP va s'y connecter pour se connecter au réseau Centiped
+
+5. l'esp va créer son propre réseau "gps_diff_esp"
+	- s'y connecter avec mdp : "gps123"
+
+6. rentrer sur le serveur web :
+	- 192.168.4.1
+
+
+Ordre d'allumage :
+1. hotspot smartphone
+2. alimentation du montage (Arduino + LC29HEA + ESP)
+3. attendre ~15 secondes que l'ESP démarre et se connecte au hotspot
+4. connecter un autre appareil au réseau "gps_diff_esp"
+5. ouvrir 192.168.4.1
+
+
+
+Fonctionnement du système après compréhension :
+1. l'antenne SMA (GPS) se connecte aux satellites GPS 
+2. l'esp-8266 se connecte à l'antenne la plus proche du réseau Centiped via le hotspot
+3. le lc29hea corrige les coordonnées (composant qui agit comme un gps différentiel)
+4. les coordonnées sont affichées sur le serveur web
+
+
